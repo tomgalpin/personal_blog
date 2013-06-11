@@ -1,0 +1,24 @@
+<form class="container" method="post" action="/new_post">
+  <fieldset>
+    <legend>Add New Post</legend>
+    <label>Post Title</label>
+
+    <input class="span3" type="text" name ="post[title]" placeholder="Give your post a title…">
+    <br>
+    <input type="hidden" name="post[date]" value="<%= Time.now %>">
+    <label>Post Author</label>
+    <input class="span3" type="text" name="author[name]" placeholder="type in your name here...">
+    <label>Post Content</label>
+    <input class="span10" method="post" name="post[content]" action="/new_post" rows="12"></textarea>
+
+    <label class="checkbox">
+      <p>Tags:</p>
+      <% Tag.all.each do |tag| %>
+        <input type="checkbox" name="post[tag_ids][]" value="<%= tag.id %>">
+        <%= tag.keyword %>
+        <br>
+      <% end %>
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
+</form>
+

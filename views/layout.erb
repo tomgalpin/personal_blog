@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WDI Potluck Manager</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li ><a href="/">Home</a></li>
+          <li ><a href="/new_tag">Admin</a></li>
+          <li ><a href="/new_post">New Post</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <%= yield %>
+
+  </body>
+</html>

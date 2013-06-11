@@ -1,0 +1,17 @@
+<h1 class="container">WDI Blog</h1>
+
+<div class="container">
+  <% Post.all.each do |post| %>
+    <strong>Title:</strong><p><%= post.title %></p>
+    <strong>Date:</strong><p><%= post.date %></p>
+    <strong>Author:</strong><p><%= post.author.name unless post.author.nil? %></p>
+
+    <strong>Blog Post:</strong><p><%= post.content %></p>
+
+
+    <strong>Tags:</strong><p><%= post.tags.map {|tag| tag.keyword }.join(", ") %> </p>
+    <hr>
+    <% end %>
+
+</div>
+

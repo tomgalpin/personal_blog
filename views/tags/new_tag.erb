@@ -1,0 +1,26 @@
+<h1 class="container">Add Tags</h1>
+
+<form class="container" method="post" action="/new_tag">
+  <input type="text" name="tag[keyword]">
+  <button>Save Tag</button>
+</form>
+
+<h3 class="container">Available Tags:</h3>
+<div id="list_of_tags" class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tags.each do |tag| %>
+      <tr>
+        <td>
+          <%= tag.keyword %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
