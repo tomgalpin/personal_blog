@@ -9,8 +9,9 @@
     <label>Post Author</label>
     <input class="span3" type="text" name="author[name]" placeholder="type in your name here...">
     <label>Post Content</label>
-    <input class="span10" method="post" name="post[content]" action="/new_post" rows="12"></textarea>
 
+    <input class="span10" method="post" name="post[content]" action="/new_post" rows="12">
+    <hr>
     <label class="checkbox">
       <p>Tags:</p>
       <% Tag.all.each do |tag| %>

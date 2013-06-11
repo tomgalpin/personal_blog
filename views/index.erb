@@ -2,16 +2,30 @@
 
 <div class="container">
   <% Post.all.each do |post| %>
-    <strong>Title:</strong><p><%= post.title %></p>
-    <strong>Date:</strong><p><%= post.date %></p>
-    <strong>Author:</strong><p><%= post.author.name unless post.author.nil? %></p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.date %></td>
+        <td><%= post.author.name unless post.author.nil? %></td>
+      </tr>
+    </tbody>
+  </table>
 
-    <strong>Blog Post:</strong><p><%= post.content %></p>
-
-
-    <strong>Tags:</strong><p><%= post.tags.map {|tag| tag.keyword }.join(", ") %> </p>
-    <hr>
-    <% end %>
+  <p class="lead"><%= post.content %></p>
+  <strong>Tags:</strong><p><%= post.tags.map {|tag| tag.keyword }.join(", ") %> </p>
+  <hr>
+  <% end %>
 
 </div>
+
+
+
 
